@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Contacts</title>
-    <link rel="stylesheet" type="text/css" href="contacts.css">
+    <link href="contacts.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+
+    <div id="header">
+        Contacts
+    </div>
+
+    <div id="contactDetails">
+        <h2>Contact Details</h2>
+        <form method="post">
+            <div class="formRow">
+                <label for="contactName">Contact Name</label>
+                <input autofocus autocomplete="off" contactName" id="contactName" type="text" />
+            </div>
+            <div class="formRow">
+                <label for="phoneNumber">Phone number</label>
+                <input placeholder="Include area code" phoneNumber" id="phoneNumber" type="tel" />
+            </div>
+            <div class="formRow">
+                <label for="emailAddress">Email address</label>
+                <input name="emailAddress" id="emailAddress" type="email" />
+            </div>
+            <div class="formRow">
+                <label for="companyName">Company Name</label>
+                <select name="companyName" id="companyName">
+                    <option value="-1">Please select</option>
+                    <option value="1">ABC Incorporated</option>
+                    <option value="2">XYZ Ltd</option>
+                    <option value="3">ACME International</option>
+                </select>
+            </div>
+
+            <div class="formRow">
+                <label for="notes">Notes</label>
+                <textarea cols="40" rows="6" name="notes"></textarea>
+            </div>
+            <div class="formRow">
+                <input style="width: 70px;" type="submit" value="Save" >
+            </div>
+            <div class="formRow">
+                <label for="lastContacted">Last contacted</label>
+                <input name="lastContacted" id="lastContacted" type="date"  >
+            </div>
+        </form>
+    </div>
+    <div id="contactList">
     <table>
         <thead>
             <tr>
@@ -39,5 +83,10 @@
         </tfoot>
         <caption>Sales leads</caption>
     </table>
+    </div>
+
+    <div id="footer">
+        Copyright 2018 Tajeshwar Singh Khara
+    </div>
 </body>
 </html>

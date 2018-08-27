@@ -1,13 +1,12 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    color: #333333;
 }
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-}
-
-td {
     padding: 5px;
 }
 
@@ -22,8 +21,47 @@ table caption {
 
 tfoot {
     font-size: 0.75em;
+    text-align: right;
 }
 
 tbody tr:nth-child(even){
     background-color: #E6E6F5;
 }
+
+#contactDetails, #contactList {
+    border: 1px solid #999999;
+    margin: 15px;
+    padding: 15px;
+
+}
+
+#header, #footer {
+    background: #3056A0;
+    color: white;
+    text-align: center;
+}
+
+#header {
+    line-height: 70px;
+    font-size: 3em;
+}
+
+#footer {
+    line-height: 40px;
+    font-size: 0.8em;
+}
+
+label{
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+input{
+    width: 200px;
+}
+
+.formRow{
+    margin-bottom: 10px;
+}
+

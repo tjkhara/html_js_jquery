@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Try It Forms</title>
+</head>
+<body>
+    <h3>Exercise for chapter 6</h3>
+    <form method="post">
+        <label for="fullName">Full Name</label>
+        <input autofocus placeholder="Enter your full name" type="text" name="fullName" id="fullName">
+
+        <label for="male">Male</label>
+        <input checked type="radio" name="gender" id="male" value="male">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+
+        <!--Checkbox-->
+        <p>Would you like to subscribe to my newsletter?</p>
+        <label for="subscribe">Yes</label>
+        <input type="checkbox" name="subscribe" id="subscribe">
+        <p></p>
+        <!--Text Area-->
+        <label for="notes">Enter your notes</label>
+        <textarea cols="30" rows="5" name="notes"></textarea>
+
+        <br>
+        <!--Date-->
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth">
+
+        <br>
+        <!--Number-->
+        <label for="salary">Salary</label>
+        <input type="number" step="500" name="salary" id="salary">
+
+        <br>
+        <!--Submit button-->
+        <label for="submit">Submit</label>
+        <input type="submit" name="submit" id="submit">
+    </form>
+</body>
+</html>
