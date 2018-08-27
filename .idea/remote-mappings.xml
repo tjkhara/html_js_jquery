@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="php@bdf9beee-856d-498e-a4c6-f659e1613a53">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$/.." remote-root="/media/sf_sandbox" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="php@2fff8d2f-321b-4b9d-ba40-dd12ec38464d">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/media/sf_sandbox/html_js_jq" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>

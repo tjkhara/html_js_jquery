@@ -1,0 +1,49 @@
+.redHeader {
+    color: red;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pageHeader {
+    color: #954b4b;
+}
+
+#firstParagraph {
+    font-weight: bold;
+}
+
+p:first-of-type {
+    font-weight: bold;
+}
+
+a:hover {
+    color: green;
+}
+
+blockquote {
+    border: 1px solid black;
+}
+
+/*This will make the cite element inherit the border style
+of the blockquote element, which is usually not the case.*/
+/*cite{
+    border: inherit;
+}*/
+
+/*This is to select all the elements that have the redHeader
+and the pageHeader class applied to them.*/
+/*h1.redHeader.pageHeader {
+    text-align: center;
+}*/
+
+/*This says cite should be selected only when it is a child of the
+blockquote element.*/
+blockquote cite {
+    text-transform: uppercase;
+}
+
+/*And this says the selection should only happen if the descendent is
+an immediate descendent of the parent.*/
+blockquote > cite {
+    color: #007e7e;;
+}

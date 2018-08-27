@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Linux html_js_jq">
+    <serverData>
+      <paths name="Flip">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/CRM" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Linux">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Linux Deployment Server">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/CRM" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Linux Server">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/CRM" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Linux html_js_jq">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/media/sf_sandbox/html_js_jq" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/media/sf_sandbox/html_js_jq/CRM" local="$PROJECT_DIR$/CRM" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

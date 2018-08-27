@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="80c31add-f480-40a7-a3cd-221f016cb270" name="Linux" url="http://sandbox.develop:8080/">
+        <fileTransfer host="sandbox.develop" port="2222" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="63133cf1-431b-4333-b0e9-2a93bafe19fc" name="Linux html_js_jq" url="http://sandbox.develop:8080/html_js_jq/">
+        <fileTransfer host="sandbox.develop" port="2222" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
