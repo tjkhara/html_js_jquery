@@ -7,86 +7,87 @@
 </head>
 <body>
 
-    <div id="header">
+    <header>
         Contacts
-    </div>
+    </header>
+    <main id="contactScreen">
+        <section id="contactDetails">
+            <h2>Contact Details</h2>
+            <form method="post">
+                <div class="formRow">
+                    <label for="contactName">Contact Name</label>
+                    <input autofocus autocomplete="off" contactName" id="contactName" type="text" />
+                </div>
+                <div class="formRow">
+                    <label for="phoneNumber">Phone number</label>
+                    <input placeholder="Include area code" phoneNumber" id="phoneNumber" type="tel" />
+                </div>
+                <div class="formRow">
+                    <label for="emailAddress">Email address</label>
+                    <input name="emailAddress" id="emailAddress" type="email" />
+                </div>
+                <div class="formRow">
+                    <label for="companyName">Company Name</label>
+                    <select name="companyName" id="companyName">
+                        <option value="-1">Please select</option>
+                        <option value="1">ABC Incorporated</option>
+                        <option value="2">XYZ Ltd</option>
+                        <option value="3">ACME International</option>
+                    </select>
+                </div>
 
-    <div id="contactDetails">
-        <h2>Contact Details</h2>
-        <form method="post">
-            <div class="formRow">
-                <label for="contactName">Contact Name</label>
-                <input autofocus autocomplete="off" contactName" id="contactName" type="text" />
-            </div>
-            <div class="formRow">
-                <label for="phoneNumber">Phone number</label>
-                <input placeholder="Include area code" phoneNumber" id="phoneNumber" type="tel" />
-            </div>
-            <div class="formRow">
-                <label for="emailAddress">Email address</label>
-                <input name="emailAddress" id="emailAddress" type="email" />
-            </div>
-            <div class="formRow">
-                <label for="companyName">Company Name</label>
-                <select name="companyName" id="companyName">
-                    <option value="-1">Please select</option>
-                    <option value="1">ABC Incorporated</option>
-                    <option value="2">XYZ Ltd</option>
-                    <option value="3">ACME International</option>
-                </select>
-            </div>
+                <div class="formRow">
+                    <label for="notes">Notes</label>
+                    <textarea cols="40" rows="6" name="notes"></textarea>
+                </div>
+                <div class="formRow">
+                    <input style="width: 70px;" type="submit" value="Save" >
+                </div>
+                <div class="formRow">
+                    <label for="lastContacted">Last contacted</label>
+                    <input name="lastContacted" id="lastContacted" type="date"  >
+                </div>
+            </form>
+        </section>
+        <section id="contactList">
+        <table>
+            <thead>
+                <tr>
+                    <th>Contact name</th>
+                    <th>Phone number</th>
+                    <th>Email address</th>
+                    <th>Company name</th>
+                    <th>Last contacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bob Morris</td>
+                    <td>555-999-8888</td>
+                    <td>bob@testing.com</td>
+                    <td>ABC corp</td>
+                    <td><time datetime="2014-09-12">9th December 2014</time></td>
+                </tr>
+                <tr>
+                    <td>Peter Mukhejee</td>
+                    <td>888-888-8888</td>
+                    <td>peter@testing.com</td>
+                    <td>Akme corp</td>
+                    <td><time datetime="2015-10-23">23rd October 2015</time></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">2 contacts displayed</td>
+                </tr>
+            </tfoot>
+            <caption>Sales leads</caption>
+        </table>
+        </section>
+    </main>
 
-            <div class="formRow">
-                <label for="notes">Notes</label>
-                <textarea cols="40" rows="6" name="notes"></textarea>
-            </div>
-            <div class="formRow">
-                <input style="width: 70px;" type="submit" value="Save" >
-            </div>
-            <div class="formRow">
-                <label for="lastContacted">Last contacted</label>
-                <input name="lastContacted" id="lastContacted" type="date"  >
-            </div>
-        </form>
-    </div>
-    <div id="contactList">
-    <table>
-        <thead>
-            <tr>
-                <th>Contact name</th>
-                <th>Phone number</th>
-                <th>Email address</th>
-                <th>Company name</th>
-                <th>Last contacted</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Bob Morris</td>
-                <td>555-999-8888</td>
-                <td>bob@testing.com</td>
-                <td>ABC corp</td>
-                <td>2014-09-12</td>
-            </tr>
-            <tr>
-                <td>Peter Mukhejee</td>
-                <td>888-888-8888</td>
-                <td>peter@testing.com</td>
-                <td>Akme corp</td>
-                <td>2015-10-23</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5">2 contacts displayed</td>
-            </tr>
-        </tfoot>
-        <caption>Sales leads</caption>
-    </table>
-    </div>
-
-    <div id="footer">
+    <footer>
         Copyright 2018 Tajeshwar Singh Khara
-    </div>
+    </footer>
 </body>
 </html>

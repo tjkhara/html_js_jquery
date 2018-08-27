@@ -35,20 +35,20 @@ tbody tr:nth-child(even){
 
 }
 
-#header, #footer {
+header {
+    line-height: 70px;
+    font-size: 3em;
     background: #3056A0;
     color: white;
     text-align: center;
 }
 
-#header {
-    line-height: 70px;
-    font-size: 3em;
-}
-
-#footer {
+footer {
     line-height: 40px;
     font-size: 0.8em;
+    background: #3056A0;
+    color: white;
+    text-align: center;
 }
 
 label{
