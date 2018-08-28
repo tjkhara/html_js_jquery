@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contact>
+	<contactName>William Jones</contactName>
+	<phoneNumber>555-2941</phoneNumber>
+	<emailAddress>william@testing.com</emailAddress>
+	<company>
+		<code>123</code>
+		<name>ABC Incorporated</name>
+	</company>
+	<notes>These are my notes</notes>
+	<lastContacted>2014-09-25</lastContacted>
+</contact>

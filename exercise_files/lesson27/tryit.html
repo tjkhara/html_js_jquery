@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">   
+    <script src="jquery-2.1.1.js"></script>	 
+    <style>
+	    div {
+              height:200px;
+              width:200px;
+              margin:50px;
+              background:green;
+              transition: background 3s, -webkit-transform 4s;
+            }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+<script>
+    var colors = ['green', 'teal', 'indigo', 'purple'];
+    var i = 0;
+    $('#div1').click(function(evt) {
+        i = i + 1;
+        var num = i % 4;
+        $(evt.target).css('background', colors[num]);
+        var angle = 90 * num;
+        $(evt.target).css('-webkit-transform', 'rotate('+angle+'deg)');
+    });
+</script>
+</html>

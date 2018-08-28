@@ -1,0 +1,18 @@
+CACHE MANIFEST
+contacts.html
+contacts_print.css
+contacts.css
+contacts.js
+jquery-2.1.1.js
+jquery-tables.js
+jquery-time.js
+jquery-ui.css
+jquery-ui.js
+images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+
+FALLBACK:
+
+NETWORK:
+*
+
+# version 1.4

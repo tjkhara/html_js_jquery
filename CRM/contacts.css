@@ -65,3 +65,11 @@ input{
     margin-bottom: 10px;
 }
 
+.validated:invalid {
+    background: #FAC3C9;
+}
+
+.validated:valid{
+    background: #BDF0A8;
+}
+

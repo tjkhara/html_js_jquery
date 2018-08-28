@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="utf-8">     
+</head>
+<body>
+	<a href="#" onclick="findLargest()">Long operation</a>
+	<a href="#" onclick="getDate()">Short operation</a>		
+</body>
+
+<script>
+   function findLargest() {
+        var max = 0;
+        for (var i = 0; i <= 1000000000; i++) {
+             max = Math.max(max, Math.random());
+        }
+        console.log(max);
+   }
+   
+   function getDate() {
+       console.log("The time is "+new Date());
+   }
+
+</script>
+</html>

@@ -1,0 +1,11 @@
+{
+    "contactName":"William Jones",
+    "phoneNumber":"555-2941",
+    "emailAddress":"william@testing.com",
+    "company":{
+        "code":123,
+        "name":"ABC Incorporated"
+    },
+    "notes":"These are my notes",
+    "lastContacted":"2014-06-30T05:50:46.659Z"
+}

@@ -16,20 +16,22 @@
             <form method="post">
                 <div class="formRow">
                     <label for="contactName">Contact Name</label>
-                    <input autofocus autocomplete="off" contactName" id="contactName" type="text" />
+                    <input required autofocus autocomplete="off" name="contactName" id="contactName"
+                          class="validated"  pattern=".{5,100}"  type="text" />
                 </div>
                 <div class="formRow">
                     <label for="phoneNumber">Phone number</label>
-                    <input placeholder="Include area code" phoneNumber" id="phoneNumber" type="tel" />
+                    <input placeholder="123-456-7890" name="phoneNumber"  id="phoneNumber" type="tel"
+                    class="validated" required  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  />
                 </div>
                 <div class="formRow">
                     <label for="emailAddress">Email address</label>
-                    <input name="emailAddress" id="emailAddress" type="email" />
+                    <input required  name="emailAddress" id="emailAddress" type="email" class="validated" />
                 </div>
                 <div class="formRow">
                     <label for="companyName">Company Name</label>
-                    <select name="companyName" id="companyName">
-                        <option value="-1">Please select</option>
+                    <select name="companyName" id="companyName" class="validated" required>
+                        <option value="">Please select</option>
                         <option value="1">ABC Incorporated</option>
                         <option value="2">XYZ Ltd</option>
                         <option value="3">ACME International</option>
@@ -38,7 +40,9 @@
 
                 <div class="formRow">
                     <label for="notes">Notes</label>
-                    <textarea cols="40" rows="6" name="notes"></textarea>
+                    <textarea id="notes" cols="40" rows="6" name="notes" class="validated" maxlength="1000" required>
+
+                    </textarea>
                 </div>
                 <div class="formRow">
                     <input style="width: 70px;" type="submit" value="Save" >
@@ -90,4 +94,22 @@
         Copyright 2018 Tajeshwar Singh Khara
     </footer>
 </body>
+
+<script>
+    var contactName = document.getElementById('contactName');
+    contactName.oninvalid = function(e)
+    {
+        e.target.setCustomValidity("");
+        if(!e.target.validity.valid)
+        {
+            if(e.target.value.length == 0)
+            {
+                e.target.setCustomValidity("Contact name is required.");
+            } else if (e.target.value.length < 5)
+            {
+                e.target.setCustomValidity("Contact name must be at least 5 characters.");
+            }
+        }
+    };
+</script>
 </html>

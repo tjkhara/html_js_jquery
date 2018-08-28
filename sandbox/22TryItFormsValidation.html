@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Try It Forms</title>
+    <style>
+        .validated:invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Exercise for chapter 6</h3>
+    <form method="post">
+        <label for="fullName">Full Name</label>
+        <input required minlength="7" maxlength="50" autofocus
+               placeholder="Enter your full name" type="text" name="fullName" id="fullName" class="validated">
+
+        <label for="male">Male</label>
+        <input checked type="radio" name="gender" id="male" value="male">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+
+        <!--Checkbox-->
+        <p>Would you like to subscribe to my newsletter?</p>
+        <label for="subscribe">Yes</label>
+        <input type="checkbox" name="subscribe" id="subscribe">
+        <p></p>
+        <!--Text Area-->
+        <label for="notes">Enter your notes</label>
+        <textarea required maxlength="500" cols="30" rows="5" name="notes" id="notes" class="validated" ></textarea>
+
+        <br>
+        <!--Date-->
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth">
+
+        <br>
+        <!--Number-->
+        <label for="salary">Salary</label>
+        <input type="number" step="500" name="salary" id="salary" min="20000" max="200000" class="validated" >
+
+        <br>
+        <!--Submit button-->
+        <label for="submit">Submit</label>
+        <input type="submit" name="submit" id="submit">
+    </form>
+</body>
+</html>

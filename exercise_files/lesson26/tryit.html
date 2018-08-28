@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">   
+	<style>
+@font-face {
+    font-family: "Open Sans";
+    src: url(OpenSans-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(OpenSans-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(OpenSans-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(OpenSans-Italic.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+
+.tabs {
+    margin-30px;
+    font-family: "Open Sans";  
+}
+
+.tab {
+    display: inline-block;
+    width:120px;
+    line-height: 35px;
+    border:1px solid #888;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    float:left;
+    border-collapse: collapse;
+    color: #888;
+    text-decoration:none;
+}
+
+.tab-body {
+    clear:both;
+    width:500px;
+    height:300px;
+    border:1px solid #888888;
+    border-collapse: collapse;
+    color: #888;
+}
+
+.tab.active {
+    background:#888888;
+    color:white;
+    font-weight: bold;
+}
+
+.tab.inactive {
+    box-shadow: -5px 5px 5px  #ababab inset;
+}
+
+	</style>
+
+</head>
+<body>
+   <div class="tabs">
+       <div class="tab-header">
+            <a class="tab inactive" data-id="1" href="#">Tab 1</a>
+            <a class="tab active" data-id="2" href="#">Tab 2</a>
+            <a class="tab inactive" data-id="3" href="#">Tab 3</a>
+       </div>
+       <div class="tab-body">
+        This is the body
+        </div>
+   </div>
+</body>
+</html>

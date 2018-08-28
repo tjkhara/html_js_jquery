@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacts</title>
+<script src="jquery-2.1.1.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="contacts.js"></script>
+<script src="jquery-time.js"></script>
+<script src="jquery-tables.js"></script>
+<script src="find.contacts.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.4.min.css" />
+<script src="jquery.mobile/jquery.mobile-1.4.4.min.js"></script>
+<style>
+thead th {
+  border-bottom: 1px solid #dedede;
+}
+.validated:invalid {
+	background:#FAC3C9;
+}
+
+.validated:valid {
+	background:#BDF0A8;
+}
+
+.requiredMarker {
+    color: red;
+    padding-left:0.3em;
+}
+</style>
+</head>
+<body>
+	<main id="contactScreen">
+	<section id="contactListPage" data-role="page">
+		<div data-role="header" data-theme="a">
+			<h1>Contact list</h1>
+			<a href="#settingsPage" data-role="button" data-icon="gear" class="ui-btn-right" data-transition="slideup">Settings</a>
+		</div>
+		<div data-role="content">
+			<table data-role="table" data-mode="columntoggle"
+				class="ui-responsive ui-table">
+				<thead>
+				    <tr>
+					    <th data-priority="1">Contact name</th>
+					    <th data-priority="2">Phone number</th>
+					    <th data-priority="1">Actions</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td colspan="3">0 contacts displayed</td>
+					</tr>
+				</tfoot>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+			<a href="#contactDetailsPage" id="addContact" data-role="button" data-transition="slide" data-icon="plus">Add</a>
+		</div>
+	</section>
+	<section data-role="page" id="contactDetailsPage">
+	<form method="post">
+		<div data-role="header">
+			<h1>Enter details</h1>
+			<a href="#contactListPage" data-role="button" data-icon="home" class="ui-btn-right">Home</a>
+		</div>
+		<div data-role="content">
+				<div class="ui-field-contain">
+					<label for="contactName">Contact name</label> <input required
+						autofocus autocomplete="off" name="contactName" type="text"
+						class="validated" id="contactName" pattern=".{5,100}" />
+				</div>
+				<div class="ui-field-contain">
+					<label for="phoneNumber">Phone number</label> <input required
+						pattern="[0-9() ]{5,15}" placeholder="Include area code"
+						name="phoneNumber" type="tel" id="phoneNumber" class="validated" />
+				</div>
+				<div class="ui-field-contain">
+					<label for="emailAddress">Email address</label> <input required
+						name="emailAddress" id="emailAddress" type="email"
+						class="validated" />
+				</div>
+				<div class="ui-field-contain">
+					<label for="companyName">Company name</label> <select required
+						name="companyName" class="validated">
+						<option value="">Please select</option>
+						<option value="1">ABC Incorporated</option>
+						<option value="2">XZY Ltd</option>
+						<option value="3">ACME International</option>
+					</select>
+				</div>
+				<div class="ui-field-contain">
+					<label for="followUp"Follow up required</label> 
+					<input name="followUp" id="followUp" type="checkbox" data-role="flipswitch" />
+				</div>
+				<div class="ui-field-contain">
+					<label for="notes">Notes</label>
+					<textarea cols="40" rows="6" name="notes" class="validated"
+						maxlength="1000"></textarea>
+					<div class="textCount"></div>
+				</div>
+				<div class="ui-field-contain">
+					<label for="lastContacted">Last contacted</label> <input
+						name="lastContacted" type="text" class="validated" />
+				</div>		
+		</div>
+		<div data-role="footer" class="ui-bar" data-position="fixed">
+			<input data-role="button" class="ui-btn-right" data-inline="true"
+				data-icon="check" type="submit" title="Save" value="Save" />
+		</div>
+		</form>
+	</section>
+		<div id="contactNotePage" data-role="page">
+			<div data-role="header">
+				<h1>Notes</h1>
+				<a href="#contactListPage" data-role="button" data-icon="home" class="ui-btn-right">Home</a>
+			</div>
+			<div data-role="content">
+			    <h2 data-property-name="contactName"></h2>
+			    <div data-property-name="phoneNumber"></div>
+			    <div data-property-name="emailAddress"></div>
+			    <div data-property-name="notes"></div>
+			    <div data-property-name="lastContacted"></div>
+			</div>
+		</div>
+	<div id="settingsPage" data-role="page">
+		<div data-role="header">
+			<h1>Settings</h1>
+			<a href="#contactListPage" data-role="button" data-icon="home" data-transition="slidedown" class="ui-btn-right">Home</a>
+		</div>
+		<div data-role="content">
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>Import contacts</h3>
+					<p>
+						<label for="importJSONFile">Import contacts</label> <input
+							type="file" id="importJSONFile" name="importJSONFile">
+					</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Import from server</h3>
+					<p>
+						<a id="importFromServer" data-role="button" href="#">Import
+							from server</a>
+					</p>
+				</div>
+			</div>
+		</div>
+      </div>	
+		<template id="contactRow">
+		    <td data-property-name="contactName"></td>
+		    <td data-property-name="phoneNumber"></td>
+	   	    <td>
+		        <div data-role="controlgroup" data-type="horizontal" class="ui-mini">
+		        <a href="#" data-role="button" data-icon="delete" data-iconpos="notext" style="height: 18px;" data-delete-button></a>
+		        <a href="#" data-role="button" data-icon="info" data-iconpos="notext" style="height: 18px;" data-notes-button></a>
+			</div>
+			</td>
+		</template>
+	</main>
+</body>
+
+<script>
+    $('#contactDetailsPage').on('swipe', function(evt) {
+        $(":mobile-pagecontainer").pagecontainer("change", "#contactListPage", { transition: 'slide', direction: 'reverse' });
+    });
+
+	$('[name="lastContacted"]').datepicker({
+		minDate : "-6m",
+		maxDate : 0
+	});
+
+    $(document).on("pagecontainerbeforechange", function( event, ui ) {
+        console.log('hello');
+    });
+    
+    $(document).on('pagecreate','#settingsPage', function(){
+       console.log('PAGECREATE');
+   });
+
+    
+	$(document).ready(function(evt) {
+		var mainElement = document.getElementById('contactScreen');
+		var screen = contactsScreen(mainElement, true);
+		screen.init();
+	});
+
+	applicationCache.addEventListener('updateready', function() {
+		location.reload();
+	});
+</script>
+
+</html>
+

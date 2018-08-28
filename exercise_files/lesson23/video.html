@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">   
+	<script src="jquery-2.1.1.js"></script>	 
+</head>
+<body>
+    <video width="800" controls autoplay poster="poster.png">
+         <source src="test.ogg" type='video/ogg; codecs="theora, vorbis"'>
+         <source src="test.m4v" type="video/mp4">
+Your browser does not support the video element.
+	</video>
+	<div id="buttons" style="padding:5px;">
+        <a href="#" id="decreaseVolume">Lower volume</a>
+        <a href="#" id="increaseVolume">Increase volume</a>  
+        <a href="#" id="slowDown">Slow down</a>
+        <a href="#" id="speedUp">Speed up</a>   
+        <a href="#" id="fullscreen">Fullscreen</a>    
+        <a href="#" id="jumpForward">Jump forward</a>   
+        <a href="#" id="jumpBack">Jump back</a>       
+    </div>
+	<script>
+	     $('#decreaseVolume').click(function(evt) {
+	         evt.preventDefault();
+	         var currentVolume = parseFloat($('video').prop('volume'));
+	         $('video').prop('volume', Math.max(0, currentVolume-0.1));
+	     });
+	     $('#increaseVolume').click(function(evt) {
+	         evt.preventDefault();
+	         var currentVolume = parseFloat($('video').prop('volume'));
+	         $('video').prop('volume', Math.min(1, currentVolume+0.1));
+	     });
+	     $('#slowDown').click(function(evt) {
+	         evt.preventDefault();
+	         var currentRate = parseFloat($('video').prop('playbackRate'));
+	         $('video').prop('playbackRate', Math.max(0, currentRate-0.1));
+	     });
+	     $('#speedUp').click(function(evt) {
+	         evt.preventDefault();
+	         var currentRate = parseFloat($('video').prop('playbackRate'));
+	         $('video').prop('playbackRate', Math.min(5, currentRate+0.1));
+	     });
+	     $('#jumpBack').click(function(evt) {
+	         evt.preventDefault();
+	         var currentTime = parseFloat($('video').prop('currentTime'));
+	         var newTime = currentTime-10;
+	         $('video').prop('currentTime', Math.max(0, newTime));
+	     });
+	     $('#jumpForward').click(function(evt) {
+	         evt.preventDefault();
+	         var currentTime = parseFloat($('video').prop('currentTime'));
+	         var duration = parseFloat($('video').prop('duration'));
+	         var newTime = currentTime+10;
+	         $('video').prop('currentTime', Math.min(duration, newTime));
+	     });
+	     $('#fullscreen').click(function(evt) {
+	         evt.preventDefault();
+	         var video = $('video')[0];
+	         if (video.requestFullscreen) {
+                video.requestFullscreen();
+              } else if (video.mozRequestFullScreen) {
+                  video.mozRequestFullScreen();
+              } else if (video.webkitRequestFullScreen) {
+                  video.webkitRequestFullScreen();
+              } else if (video.msRequestFullScreen) {
+                  video.msRequestFullScreen();
+              }
+	     });
+	     
+	</script>
+</body>
+</html>

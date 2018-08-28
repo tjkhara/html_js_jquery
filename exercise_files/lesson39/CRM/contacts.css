@@ -1,0 +1,171 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	color: #333333;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding:5px;
+}
+
+thead {
+	background: #3056A0;
+	color: white;
+}
+
+table > caption {
+	font-weight: bold;
+}
+
+tfoot {
+	font-size: 0.75em;
+	text-align:right;
+}
+
+tbody tr:nth-child(even) {
+	background: #E6E6F5;
+}
+
+header {
+	background: #3056A0;
+	color: white;
+	text-align:center;
+	line-height: 2em;	
+	font-size: 3em;
+}
+
+#contactDetails, #contactList {
+	border: 1px solid #999999;
+	margin: 1em;
+	padding:1em;
+}
+
+input, select, textarea {
+	width:90%;
+}
+
+label {
+    display: block;
+}
+
+.formRow {
+	margin-bottom:1em;
+}
+
+footer {
+	line-height:2em;
+	background: #3056A0;
+	color: white;
+	text-align:center;
+	font-size: 0.8em;
+}
+
+.validated:invalid {
+	background:#FAC3C9;
+}
+
+.validated:valid {
+	background:#BDF0A8;
+}
+
+.controls {
+    padding:2em;
+}
+
+.overlay {
+    position: fixed;
+	height: 60%;
+	max-height:10em;
+	overflow:auto;
+	width: 70%;
+	max-width:15em;
+	margin-left:-5em;
+	border: 1px solid #333;
+	background: #eee;
+	display: none;
+	z-index:1;
+	padding:10px;
+	color: #333333 !important;
+}
+
+.requiredMarker {
+    color: red;
+    padding-left:0.3em;
+}
+
+.print_only {
+   display:none;
+}
+
+#fileImport, #serverImport, #chooseTheme {
+    margin: 2em;
+    border: 1px solid #999999;
+    border-radius: 1em;
+    width: 50%;
+    min-width:12em;
+    padding: 1em 1em 0 1em;
+    background: #DAECFF;
+}
+
+.theme {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-block;
+    border: 1px solid #999999;
+    border-radius: 0.2em; 
+}
+
+.grid_quarter {
+    display:inline-block;
+    vertical-align: top;
+    width:23%;
+    min-width:15em;
+    max-width:20em;
+}
+
+.grid_half {
+    display:inline-block;
+    vertical-align: top;
+    width:47%;
+    min-width:15em;
+    max-width:50em;
+}
+
+@media (min-width: 650px) {
+  .medium-displayed {
+    display:none;
+  }
+}
+
+@media (min-width: 450px) {
+  .small-displayed {
+    display:none;
+  }
+}
+
+@media (min-width: 300px) {
+  .tiny-displayed {
+    display:none;
+  }
+}
+
+@media (max-width: 650px) {
+  .medium-supressed {
+    display: none;
+   }
+}
+
+@media (max-width: 450px) {
+  .small-supressed {
+    display: none;
+   }
+}
+
+@media (max-width: 300px) {
+  .tiny-supressed {
+    display: none;
+  }
+}
+

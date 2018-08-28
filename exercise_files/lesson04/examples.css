@@ -1,0 +1,21 @@
+			.redHeader {
+				color: red;
+				text-decoration:underline;
+				
+			}
+			
+			h1.redHeader {
+				text-align: center;
+			}
+			
+			p:first-of-type {
+				font-weight: bold;
+			}
+			
+			a:hover {
+				color: green;
+			}
+			
+			blockquote > cite {
+				text-transform: uppercase;
+			}

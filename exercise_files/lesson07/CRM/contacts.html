@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="utf-8">     
+         <title>Contacts</title>
+         <link rel="stylesheet" type="text/css" href="contacts.css">  
+</head>
+<body>
+	<header>Contacts</header>
+	<main id="contactScreen">
+	<section id="contactDetails"><h2>Contact details</h2>
+	<form method="post">
+		<div class="formRow">
+			<label for="contactName">Contact name</label>
+			<input autofocus autocomplete="off" name="contactName" id="contactName" type="text"/>
+		</div>
+		<div class="formRow">
+			<label for="phoneNumber">Phone number</label>
+			<input placeholder="Include area code" name="phoneNumber" id="phoneNumber" type="tel"/>
+		</div>
+		<div class="formRow">
+			<label for="emailAddress">Email address</label>
+			<input name="emailAddress" id="emailAddress" type="email"/>
+		</div>
+		<div class="formRow">
+			<label for="companyName">Company name</label>
+			<select name="companyName" id="companyName">
+				<option value="-1">Please select</option>
+				<option value="1">ABC Incorporated</option>
+				<option value="2">XZY Ltd</option>
+				<option value="3">ACME International</option>
+			</select>
+		</div>
+		<div class="formRow">
+			<label for="notes">Notes</label>
+			<textarea cols="40" rows="6" name="notes" id="notes" ></textarea>
+		</div>
+		<div class="formRow">
+			<label for="lastContacted">Last contacted</label>
+			<input name="lastContacted" id="lastContacted" type="date"/>
+		</div>
+		<div class="formRow">
+			<input style="width:70px" type="submit" value="Save"/>
+		</div>
+	</form>
+	</section>
+	<section id="contactList">
+	<table>
+		<thead>
+			<th>Contact name</th>
+			<th>Phone number</th>
+			<th>Email address</th>
+			<th>Company name</th>
+			<th>Last contacted</th>
+		</thead>		
+		<tbody>
+			<tr>
+				<td>William Smith</td>
+				<td>555-642-737</td>
+				<td>william@testing.com</td>
+				<td>ACME Industries</td>
+				<td><time datetime="2014-10-21">2014-10-21</time></td>
+			</tr>
+			<tr>
+				<td>Bob Morris</td>
+				<td>555-999-299</td>
+				<td>bob@testing.com</td>
+				<td>ABC Corp</td>
+				<td><time datetime="2014-09-12">2014-09-12</time></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5">2 contacts displayed</td>
+			</tr>
+		</tfoot>
+		<caption>Sales leads</caption>
+	</table>
+	</section>
+	</main>
+	<footer>Copyright 2014</footer>
+</body>
+</html>
+

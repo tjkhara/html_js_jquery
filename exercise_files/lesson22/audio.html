@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">   
+	<script src="jquery-2.1.1.js"></script>	 
+</head>
+<body>
+	<audio id="audioTrack">
+  <source src="test.ogg#t15,30" type="audio/ogg">
+  <source src="test.mp4#t15,30" type="audio/mp4">
+Your browser does not support the audio element.
+</audio>
+<div id="controls">
+<progress></progress>
+<div id="buttons" style="padding:5px;">
+<a href="#" id="play">Play</a>
+<a href="#" id="pause">Pause</a>
+<a href="#" id="stop">Stop</a>
+</div>
+<input type="range" min="0" max="100" value="0" id="setLocation"/>
+</div>
+<script>
+$("audio").on('timeupdate', function(evt){
+    var duration = evt.target.duration;
+	var current = evt.target.currentTime;
+	$('progress').val(current/duration);
+});
+$('#play').click(function(evt) {
+    evt.preventDefault();
+	$("audio")[0].play();
+});
+$('#pause').click(function(evt) {
+    evt.preventDefault();
+	$("audio")[0].pause();
+});
+$('#stop').click(function(evt) {
+    evt.preventDefault();
+	$("audio")[0].currentTime = 0;
+	$("audio")[0].pause();
+});
+$('#setLocation').change(function(evt) {
+     var val = $(evt.target).val();
+	 var duration = $("audio")[0].duration;
+	 var location = duration*(parseInt(val)/100);
+	 $("audio")[0].currentTime = location;
+	 $("audio")[0].play();
+});
+
+
+</script>
+</body>
+</html>

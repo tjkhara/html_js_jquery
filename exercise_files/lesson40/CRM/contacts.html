@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="utf-8">     
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Contacts</title>
+         <link rel="stylesheet" media="all" type="text/css" href="contacts.css">  
+         <link rel="stylesheet" media="print" type="text/css" href="contacts_print.css">  
+         <link rel="stylesheet" type="text/css" href="jquery-ui.css">  	
+         <script src="jquery-2.1.1.js"></script>	 
+         <script src="contacts.js"></script>
+         <script src="jquery-ui.js"></script>		
+         <script src="jquery-time.js"></script>		
+         <script src="jquery-tables.js"></script>	 
+         <script src="find.contacts.js"></script>	
+</head>
+<body>
+	<header class="noprint">Contacts</header>
+	<header class="print_only">Printed from CRM</header>
+	<main id="contactScreen">
+	<section id="contactDetails" class="noprint" style="display:none"><h2>Contact details</h2>
+	<form method="post">
+		<div class="formRow">
+		    <div class="grid_quarter">
+			    <label for="contactName">Contact name</label>
+			    <input required autofocus autocomplete="off" name="contactName" type="text" class="validated" id="contactName" pattern=".{5,100}"/>
+		    </div>
+		    <div class="grid_quarter">
+    			<label for="phoneNumber">Phone number</label>
+	    		<input required pattern="[0-9() ]{5,15}" placeholder="Include area code" name="phoneNumber" type="tel"   id="phoneNumber" class="validated" />		    
+		    </div>
+		    <div class="grid_quarter">
+	    		<label for="emailAddress">Email address</label>
+    			<input required name="emailAddress" id="emailAddress" type="email" class="validated"/>
+		    </div>
+		    <div class="grid_quarter">
+			    <label for="companyName">Company name</label>
+		    	<select required name="companyName" class="validated">
+			    	<option value="">Please select</option>
+			    	<option value="1">ABC Incorporated</option>
+			    	<option value="2">XZY Ltd</option>
+			    	<option value="3">ACME iInternational<option>
+		    	</select>
+		    </div>
+		</div>
+		<div class="formRow">
+		    <div class="grid_half">
+			    <label for="notes">Notes</label>
+			    <textarea cols="40" rows="6" name="notes" class="validated" maxlength="1000"></textarea>
+			    <div class="textCount"></div>
+			</div>
+			<div class="grid_quarter">
+			    <label for="lastContacted">Last contacted</label>
+			    <input name="lastContacted" type="text" class="validated"/>			
+			</div>
+		</div>
+		<div class="formRow">
+			<input style="width:70px" type="submit" title="Save" value="Save"/>
+		</div>
+	</form>
+	</section>
+	<section id="contactList">
+	<table>
+		<thead>
+			<th>Contact name</th>
+			<th class="medium-supressed">Phone number</th>
+			<th class="small-supressed">Email address</th>
+			<th class="small-supressed">Company name</th>
+			<th class="tiny-supressed">Last contacted</th>
+			<th class="noprint">Actions</th>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="6">0 contacts displayed</td>
+			</tr>
+		</tfoot>
+		<tbody>
+		</tbody>
+		<caption>Sales leads</caption>
+	</table>
+	<div class="controls noprint">
+	    <a href="#" id="addContact">Add a new contact</a>
+	    <a onClick="window.print()" href="#">Print</a>
+	</div>
+	</section>
+	<section id="fileImport">
+		<div class="formRow">
+			<label for="importJSONFile">Import contacts</label>
+			<input type="file" id="importJSONFile" name="importJSONFile">
+		</div>	
+	</section>
+	
+	<section id="serverImport">
+		<div class="formRow">
+			<a id="importFromServer" href="#">Import from server</a>
+		</div>	
+	</section>
+	<section id="notifications">
+	</section>
+	<section id="chooseTheme">
+	    <div class="formRow">
+	         Choose a theme 
+	         <div><a class="theme" href="#" style="background:#C644FC" data-theme-file="purple_theme.js"></a> 
+	         <a class="theme" href="#" style="background:#FF5E3A" data-theme-file="red_theme.js"></a> 
+	         <a class="theme" href="#" style="background:#FF9500" data-theme-file="orange_theme.js"></a></div>
+	    </div>
+	</section>
+
+	<template id="contactRow">
+		<td data-property-name="contactName"></td>
+		<td class="medium-supressed" data-property-name="phoneNumber"></td>
+		<td class="small-supressed" data-property-name="emailAddress"></td>
+		<td class="small-supressed" data-property-name="companyName"></td>
+		<td class="tiny-supressed">
+		    <time data-property-name="lastContacted"></time>
+		    <div class="overlay">
+		        <div class="medium-displayed" data-property-name="phoneNumber"></div>
+		        <div class="small-displayed" data-property-name="emailAddress"></div>
+		        <div class="small-displayed" data-property-name="companyName"></div>
+		        <div data-property-name="notes"></div>
+		    </div>
+		</td>
+		<td class="noprint"><a href="#" data-delete-button>Delete</a></td>
+     </template>	
+	</main>
+	<footer class="noprint">Copyright 2014</footer>
+</body>
+
+<script>
+$('[name="lastContacted"]').datepicker({
+    minDate: "-6m",
+    maxDate: 0
+});
+
+$(document).ready(function(evt) {
+    var mainElement = document.getElementById('contactScreen');
+    var screen = contactsScreen(mainElement);
+    screen.init();
+    if (localStorage.theme) {
+        $.getScript(localStorage.theme);
+    }
+});
+
+applicationCache.addEventListener('updateready', function() {
+    location.reload();
+});
+
+</script>
+
+</html>
+

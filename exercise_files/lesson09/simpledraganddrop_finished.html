@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="utf-8">    
+         <style>
+			.box {
+				height:200px;
+				width:400px;
+				display:inline-block;
+				text-align:center;
+				border: 2px dashed black;
+				line-height: 200px;
+				margin: 50px;
+			}	
+         </style>
+		 
+			<script>
+			function allowDrop(evt) {
+				evt.stopPropagation();
+                evt.preventDefault();
+			}
+
+			function startDragging(evt) {
+				evt.dataTransfer.setData("Text", evt.target.textContent);
+			}
+
+			function drop(evt) {
+				var text = evt.dataTransfer.getData("Text");
+				evt.target.textContent = text;
+			}			
+			</script>
+
+</head>
+<body>
+	<div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">Drag something onto me</div>	
+	<h1  draggable="true" ondragstart="startDragging(event)">I am a header 1 tag</h1>
+	<h3  draggable="true" ondragstart="startDragging(event)">I am a header 3 tag</h3>
+	<p  draggable="true" ondragstart="startDragging(event)" >I am a p tag</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <meta charset="utf-8">     
+         <title>Lowest number</title> 
+         <link rel="stylesheet" media="all" type="text/css" href="contacts.css">  
+         <script src="jquery-2.1.1.js"></script>
+</head>
+<body>
+	<header>Find the lowest number</header>
+	<form method="post" style="margin:30px">
+		<div class="formRow">
+			<label for="contactName">Enter a number</label>
+			<input required name="theNumber" type="number" class="validated" id="theNumber"/>
+		</div>
+		<div class="formRow">
+			<input style="width:70px" type="submit" title="Find" value="Find"/>
+		</div>
+	</form>
+	</section>
+	<section id="numberList" style="margin:30px">
+	<table>
+	    <thead>
+	        <th>Number entered</th>
+	        <th>Result</th>
+	    </thead>
+		<tbody>
+		</tbody>
+	</table>
+	</section>
+</body>
+
+<script>
+    $('form input[type="submit"]').click(
+		function(evt) {
+			evt.preventDefault();
+			var number = $('#theNumber').val();
+			var worker = new Worker('random.js');
+			worker.addEventListener('message', function(evt) {
+				var result = evt.data;
+				var row = $('<tr>').append('<td>'+number+'</td>').append('<td>' +result+'</td>');
+				$('#numberList table tbody').append(row);
+			}, false);
+			worker.postMessage(parseInt(number));
+		});
+
+</script>
+
+</html>
+

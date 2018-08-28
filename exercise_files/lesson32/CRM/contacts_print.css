@@ -1,0 +1,21 @@
+   .noprint {
+    display: none;
+  }
+  th {
+      color:black;
+      background:white;
+  }
+  #contactList {
+      border: none;
+      margin: none;
+      padding:none;
+  }
+  
+  .print_only {
+      display:initial;
+  }
+  
+  header {
+      font-size:16px;
+      color:black;
+  }
